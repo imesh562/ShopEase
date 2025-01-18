@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
+		31B2D72B1338EECC8F1C0810 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041A919D279B0095326CA7C1 /* Pods_Runner.framework */; };
 		331C808B294A63AB00263BE5 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C807B294A618700263BE5 /* RunnerTests.swift */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		4AB201A86B3F1393BF9A2A84 /* Pods_RunnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3163540D4191AF8622F8460 /* Pods_RunnerTests.framework */; };
@@ -19,7 +20,7 @@
 		C927E3AC2B29FED70087FFD1 /* staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C927E3A92B29FED70087FFD1 /* staging.xcconfig */; };
 		C927E3AD2B29FED70087FFD1 /* development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C927E3AA2B29FED70087FFD1 /* development.xcconfig */; };
 		C927E3AE2B29FED70087FFD1 /* production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C927E3AB2B29FED70087FFD1 /* production.xcconfig */; };
-		F95BF5B49E378FB6B4FDFEED /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041A919D279B0095326CA7C1 /* Pods_Runner.framework */; };
+		C9362CA72D3BF8B200F4D01F /* pre_production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C9362CA62D3BF8B200F4D01F /* pre_production.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		C927E3A92B29FED70087FFD1 /* staging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = staging.xcconfig; sourceTree = "<group>"; };
 		C927E3AA2B29FED70087FFD1 /* development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = development.xcconfig; sourceTree = "<group>"; };
 		C927E3AB2B29FED70087FFD1 /* production.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = production.xcconfig; sourceTree = "<group>"; };
+		C9362CA62D3BF8B200F4D01F /* pre_production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = pre_production.xcconfig; sourceTree = "<group>"; };
 		CF2AEAC0351891AEE0F08DA4 /* Pods-RunnerTests.debug-pre_production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.debug-pre_production.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.debug-pre_production.xcconfig"; sourceTree = "<group>"; };
 		D2F474B1257BC982B58D3FDB /* Pods-RunnerTests.release-development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.release-development.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.release-development.xcconfig"; sourceTree = "<group>"; };
 		DDBCF65B9F12DC61522537ED /* Pods-RunnerTests.release-pre_production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.release-pre_production.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.release-pre_production.xcconfig"; sourceTree = "<group>"; };
@@ -107,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F95BF5B49E378FB6B4FDFEED /* Pods_Runner.framework in Frameworks */,
+				31B2D72B1338EECC8F1C0810 /* Pods_Runner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +188,7 @@
 				331C8082294A63A400263BE5 /* RunnerTests */,
 				0BBBA5C1E36E8A081F67AD9E /* Pods */,
 				3CABA10B9C6CA76479DDF8B3 /* Frameworks */,
+				C9362CA62D3BF8B200F4D01F /* pre_production.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -314,6 +317,7 @@
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
 				C902FAB82C09E7B100243420 /* FirebaseConfigs in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
+				C9362CA72D3BF8B200F4D01F /* pre_production.xcconfig in Resources */,
 				C927E3AC2B29FED70087FFD1 /* staging.xcconfig in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				C927E3AD2B29FED70087FFD1 /* development.xcconfig in Resources */,
@@ -1276,7 +1280,7 @@
 		};
 		C91E3AF02D1D9C9300F2FDD4 /* Debug-pre_production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C927E3A92B29FED70087FFD1 /* staging.xcconfig */;
+			baseConfigurationReference = C9362CA62D3BF8B200F4D01F /* pre_production.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1334,7 +1338,7 @@
 		};
 		C91E3AF12D1D9C9300F2FDD4 /* Debug-pre_production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C927E3A92B29FED70087FFD1 /* staging.xcconfig */;
+			baseConfigurationReference = C9362CA62D3BF8B200F4D01F /* pre_production.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = "ShopEase Pre";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1535,7 +1539,7 @@
 		};
 		C91E3AF32D1D9CA700F2FDD4 /* Release-pre_production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C927E3A92B29FED70087FFD1 /* staging.xcconfig */;
+			baseConfigurationReference = C9362CA62D3BF8B200F4D01F /* pre_production.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1590,7 +1594,7 @@
 		};
 		C91E3AF42D1D9CA700F2FDD4 /* Release-pre_production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C927E3A92B29FED70087FFD1 /* staging.xcconfig */;
+			baseConfigurationReference = C9362CA62D3BF8B200F4D01F /* pre_production.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = "ShopEase Pre";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1788,7 +1792,7 @@
 		};
 		C91E3AF62D1D9CB400F2FDD4 /* Profile-pre_production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C927E3A92B29FED70087FFD1 /* staging.xcconfig */;
+			baseConfigurationReference = C9362CA62D3BF8B200F4D01F /* pre_production.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1841,7 +1845,7 @@
 		};
 		C91E3AF72D1D9CB400F2FDD4 /* Profile-pre_production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C927E3A92B29FED70087FFD1 /* staging.xcconfig */;
+			baseConfigurationReference = C9362CA62D3BF8B200F4D01F /* pre_production.xcconfig */;
 			buildSettings = {
 				APP_DISPLAY_NAME = "ShopEase Pre";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
