@@ -9,7 +9,7 @@ class MockModels {
       {
          "id": 1,
          "product_name": "PlayStation 5",
-         "thumbnail": "https://cdn.pixabay.com/photo/2020/11/23/14/14/playstation-5-5768350_960_720.jpg",
+         "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5l0FIb-69eoJixW5cqeucD2l0f14NzLDFQw&s",
          "price_label": 499.99,
          "store": {
             "store_id": 101,
@@ -20,7 +20,7 @@ class MockModels {
       {
          "id": 2,
          "product_name": "Xbox Series X",
-         "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Xbox_Series_X_and_Series_S_2020.jpg",
+         "thumbnail": "https://cms-assets.xboxservices.com/assets/bc/40/bc40fdf3-85a6-4c36-af92-dca2d36fc7e5.png?n=642227_Hero-Gallery-0_A1_857x676.png",
          "price_label": 499.99,
          "store": {
             "store_id": 102,
@@ -31,7 +31,7 @@ class MockModels {
       {
          "id": 3,
          "product_name": "Nintendo Switch",
-         "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/0/0c/NintendoSwitchLogo.svg",
+         "thumbnail": "https://m.media-amazon.com/images/I/51Gz7IimgoL.jpg",
          "price_label": 299.99,
          "store": {
             "store_id": 103,
@@ -53,7 +53,7 @@ class MockModels {
       {
          "id": 5,
          "product_name": "Gaming Laptop",
-         "thumbnail": "https://cdn.pixabay.com/photo/2017/08/05/00/12/computer-2586964_960_720.jpg",
+         "thumbnail": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/alienware-notebooks/alienware-x16-r1-intel/media-gallery/gray/notebook-alienware-x16-gray-gallery-4.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=680&qlt=100,1&resMode=sharp2&size=680,402&chrss=full",
          "price_label": 1299.99,
          "store": {
             "store_id": 105,
@@ -64,7 +64,7 @@ class MockModels {
       {
          "id": 6,
          "product_name": "Gaming Headset",
-         "thumbnail": "https://cdn.pixabay.com/photo/2017/08/05/00/12/computer-2586964_960_720.jpg",
+         "thumbnail": "https://gadgetasia.lk/wp-content/uploads/2024/07/monster-rgb-gaming-headset-best-price-gadget-asia-lk-sri-lanka.webp",
          "price_label": 99.99,
          "store": {
             "store_id": 106,
@@ -75,7 +75,7 @@ class MockModels {
       {
          "id": 7,
          "product_name": "External SSD",
-         "thumbnail": "https://cdn.pixabay.com/photo/2016/12/28/09/34/ssd-1932777_960_720.jpg",
+         "thumbnail": "https://laptopcare.lk/wp-content/uploads/2024/08/Untitled-design-34-1.jpg",
          "price_label": 149.99,
          "store": {
             "store_id": 107,
@@ -86,7 +86,7 @@ class MockModels {
       {
          "id": 8,
          "product_name": "VR Headset",
-         "thumbnail": "https://cdn.pixabay.com/photo/2017/01/13/15/22/vr-1972503_960_720.jpg",
+         "thumbnail": "https://lifemobile.lk/wp-content/uploads/2023/06/Virtual-Reality-Headset.jpg",
          "price_label": 349.99,
          "store": {
             "store_id": 108,
@@ -97,7 +97,7 @@ class MockModels {
       {
          "id": 9,
          "product_name": "Smartphone",
-         "thumbnail": "https://cdn.pixabay.com/photo/2014/09/23/21/23/iphone-458159_960_720.jpg",
+         "thumbnail": "https://edgemobile.lk/wp-content/uploads/2024/09/Apple-iPhone-16-finish-lineup-geo-240909_big.jpg.large_.jpg",
          "price_label": 999.99,
          "store": {
             "store_id": 109,
@@ -108,7 +108,7 @@ class MockModels {
       {
          "id": 10,
          "product_name": "Smartwatch",
-         "thumbnail": "https://cdn.pixabay.com/photo/2017/01/22/12/14/smart-watch-2000998_960_720.jpg",
+         "thumbnail": "https://m.media-amazon.com/images/I/71pBtMd2vjL.jpg",
          "price_label": 199.99,
          "store": {
             "store_id": 110,
@@ -119,7 +119,7 @@ class MockModels {
       {
          "id": 11,
          "product_name": "Xbox Series X Controller",
-         "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Xbox_series_X_controller.jpg",
+         "thumbnail": "https://assets.xboxservices.com/assets/bb/bb/bbbb4545-ab47-4d89-81cc-41ed7849b438.jpg?n=444793_Gallery-0_1_1350x759.jpg",
          "price_label": 59.99,
          "store": {
             "store_id": 102,
@@ -130,7 +130,7 @@ class MockModels {
       {
          "id": 12,
          "product_name": "PlayStation DualSense Controller",
-         "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/d/d5/PlayStation_5_DualSense_controller.jpg",
+         "thumbnail": "https://i0.wp.com/xclusive.lk/wp-content/uploads/DualSense-VolcanicRed-Hero-1-NEW-1.webp?fit=400%2C400&ssl=1",
          "price_label": 69.99,
          "store": {
             "store_id": 101,
@@ -141,7 +141,7 @@ class MockModels {
       {
          "id": 13,
          "product_name": "Wireless Earbuds",
-         "thumbnail": "https://cdn.pixabay.com/photo/2019/09/03/06/54/headphones-4441681_960_720.jpg",
+         "thumbnail": "https://images-cdn.ubuy.qa/649d6af87ff8a12a1b0bc8db-wireless-earbuds-bluetooth-5-3-earbuds.jpg",
          "price_label": 129.99,
          "store": {
             "store_id": 106,
@@ -152,7 +152,7 @@ class MockModels {
       {
          "id": 14,
          "product_name": "Home Theater System",
-         "thumbnail": "https://cdn.pixabay.com/photo/2017/01/13/15/11/home-cinema-1972166_960_720.jpg",
+         "thumbnail": "https://m.media-amazon.com/images/I/81B-OElKNRL._AC_UF894,1000_QL80_.jpg",
          "price_label": 799.99,
          "store": {
             "store_id": 104,
@@ -163,7 +163,7 @@ class MockModels {
       {
          "id": 15,
          "product_name": "Gaming Chair",
-         "thumbnail": "https://cdn.pixabay.com/photo/2017/08/05/00/12/computer-2586964_960_720.jpg",
+         "thumbnail": "https://m.media-amazon.com/images/I/71DlNwhYT1L.jpg",
          "price_label": 199.99,
          "store": {
             "store_id": 105,
@@ -174,7 +174,7 @@ class MockModels {
       {
          "id": 16,
          "product_name": "Portable Bluetooth Speaker",
-         "thumbnail": "https://cdn.pixabay.com/photo/2016/11/18/16/24/sound-1835461_960_720.jpg",
+         "thumbnail": "https://xmobile.lk/wp-content/uploads/2023/09/JBL-Boombox-3-Wi-Fi-Portable-Bluetooth-Speaker-1.png",
          "price_label": 49.99,
          "store": {
             "store_id": 106,
@@ -185,7 +185,7 @@ class MockModels {
       {
          "id": 17,
          "product_name": "Fitness Tracker",
-         "thumbnail": "https://cdn.pixabay.com/photo/2017/01/06/22/49/fitness-1952938_960_720.jpg",
+         "thumbnail": "https://www.sbsmobile.com/bel/294162-thickbox_default/vital-fit-en.jpg",
          "price_label": 99.99,
          "store": {
             "store_id": 110,
@@ -196,7 +196,7 @@ class MockModels {
       {
          "id": 18,
          "product_name": "4TB External Hard Drive",
-         "thumbnail": "https://cdn.pixabay.com/photo/2014/11/20/13/15/hard-disk-540407_960_720.jpg",
+         "thumbnail": "https://www.sense.lk/images/uploads/product/40667_4772_SEAGATE-4TB-EXPANSION.png",
          "price_label": 129.99,
          "store": {
             "store_id": 107,
@@ -207,7 +207,7 @@ class MockModels {
       {
          "id": 19,
          "product_name": "Streaming Stick",
-         "thumbnail": "https://cdn.pixabay.com/photo/2017/08/01/08/29/technology-2567990_960_720.jpg",
+         "thumbnail": "https://images.thdstatic.com/productImages/b7ea5f26-42b0-4184-b45f-18e35c1acbe6/svn/black-roku-media-streaming-devices-3821r2-64_600.jpg",
          "price_label": 39.99,
          "store": {
             "store_id": 104,
@@ -218,7 +218,7 @@ class MockModels {
       {
          "id": 20,
          "product_name": "Gaming Keyboard",
-         "thumbnail": "https://cdn.pixabay.com/photo/2017/08/05/00/12/computer-2586964_960_720.jpg",
+         "thumbnail": "https://m.media-amazon.com/images/I/71fRP7KY9hL._AC_SL1500_.jpg",
          "price_label": 89.99,
          "store": {
             "store_id": 105,

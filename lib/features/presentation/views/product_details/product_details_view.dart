@@ -33,7 +33,6 @@ class _ProductDetailsViewState extends BaseViewState<ProductDetailsView> {
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [],
               ),
             ),
