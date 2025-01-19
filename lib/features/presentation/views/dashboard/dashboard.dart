@@ -1,13 +1,15 @@
-import 'package:shopease/features/presentation/bloc/auth/auth_bloc.dart';
-import 'package:shopease/features/presentation/views/dashboard/home/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:shopease/features/presentation/views/dashboard/home/home_view.dart';
+import 'package:shopease/features/presentation/views/dashboard/settings/settings_view.dart';
 
 import '../../../../core/service/dependency_injection.dart';
 import '../../../../utils/app_colors.dart';
 import '../../bloc/base_bloc.dart';
 import '../../bloc/base_event.dart';
 import '../../bloc/base_state.dart';
+import '../../bloc/product/product_bloc.dart';
 import '../base_view.dart';
+import 'cart/cart_view.dart';
 import 'common/bottom_navbar.dart';
 
 class DashboardView extends BaseView {
@@ -20,7 +22,7 @@ class DashboardView extends BaseView {
 }
 
 class _DashboardViewState extends BaseViewState<DashboardView> {
-  var bloc = injection<AuthBloc>();
+  var bloc = injection<ProductBloc>();
   int selectedTab = 1;
   int actionTab = 1;
   List<int> tabHistory = [1];
@@ -72,13 +74,9 @@ class _DashboardViewState extends BaseViewState<DashboardView> {
       case 1:
         return HomeView();
       case 2:
-        return HomeView();
+        return CartView();
       case 3:
-        return HomeView();
-      case 4:
-        return HomeView();
-      case 5:
-        return HomeView();
+        return SettingsView();
       default:
         return HomeView();
     }

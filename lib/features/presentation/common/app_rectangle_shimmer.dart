@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
 class AppRectangleShimmer extends StatelessWidget {
   final Color color;
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final double? borderRadius;
 
-  AppRectangleShimmer(
-      {required this.color,
-      required this.width,
-      required this.height,
-      this.borderRadius});
+  AppRectangleShimmer({
+    required this.color,
+    this.width,
+    this.height,
+    this.borderRadius,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class AppRectangleShimmer extends StatelessWidget {
         width: width,
         decoration: BoxDecoration(
           color: color.withOpacity(.8),
-          borderRadius: BorderRadius.circular(borderRadius ?? 10),
+          borderRadius: BorderRadius.circular(borderRadius ?? 6.r),
         ),
       ),
     );
