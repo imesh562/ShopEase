@@ -50,7 +50,7 @@ class _AppButtonOutlineState extends State<AppButtonOutline> {
           });
         },
         child: Container(
-          padding:EdgeInsets.all(14),
+          padding: EdgeInsets.all(14),
           width: widget.width == 0 ? double.infinity : widget.width,
           // height: widget.height,
           decoration: BoxDecoration(
@@ -83,9 +83,10 @@ class _AppButtonOutlineState extends State<AppButtonOutline> {
                       fontWeight: widget.isFromDialog!
                           ? FontWeight.w500
                           : FontWeight.w600,
-                      fontSize: widget.fontSize ?? (widget.isFromDialog!
-                          ? AppDimensions.kFontSize14
-                          : AppDimensions.kFontSize16),
+                      fontSize: widget.fontSize ??
+                          (widget.isFromDialog!
+                              ? AppDimensions.kFontSize14
+                              : AppDimensions.kFontSize16),
                     ),
                   ),
                 )),
