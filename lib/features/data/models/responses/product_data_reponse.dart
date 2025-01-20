@@ -1,5 +1,9 @@
 import 'dart:convert';
 
+import 'package:hive/hive.dart';
+
+part 'product_data_reponse.g.dart';
+
 ProductDataResponse productDataResponseFromJson(String str) =>
     ProductDataResponse.fromJson(json.decode(str));
 
@@ -40,16 +44,26 @@ class ProductDataResponse {
       };
 }
 
+@HiveType(typeId: 0)
 class Product {
+  @HiveField(0)
   final int? id;
+  @HiveField(1)
+  int? itemCount;
+  @HiveField(2)
   final String? productName;
+  @HiveField(3)
   final String? description;
+  @HiveField(4)
   final String? thumbnail;
+  @HiveField(5)
   final double? priceLabel;
+  @HiveField(6)
   final Store? store;
-
+  @HiveField(7)
   Product({
     this.id,
+    this.itemCount,
     this.productName,
     this.description,
     this.thumbnail,
@@ -59,6 +73,7 @@ class Product {
 
   factory Product.fromJson(Map<String, dynamic> json) => Product(
         id: json["id"],
+        itemCount: json["item_count"],
         productName: json["product_name"],
         description: json["description"],
         thumbnail: json["thumbnail"],
@@ -68,6 +83,7 @@ class Product {
 
   Map<String, dynamic> toJson() => {
         "id": id,
+        "item_count": itemCount,
         "product_name": productName,
         "description": description,
         "thumbnail": thumbnail,
@@ -76,12 +92,16 @@ class Product {
       };
 }
 
+@HiveType(typeId: 1)
 class Store {
   final int? storeId;
+  @HiveField(0)
   final String? storeLogo;
+  @HiveField(1)
   final String? storeName;
+  @HiveField(2)
   final String? address;
-
+  @HiveField(3)
   Store({
     this.storeId,
     this.storeLogo,

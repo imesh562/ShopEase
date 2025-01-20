@@ -6,11 +6,13 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:shopease/utils/enums.dart';
 
 import '../app/shopease_app.dart';
 import '../core/configurations/app_config.dart';
 import '../core/service/dependency_injection.dart' as di;
+import '../features/data/models/responses/product_data_reponse.dart';
 import '../utils/app_colors.dart';
 import 'flavor_config.dart';
 
@@ -36,6 +38,10 @@ Future<void> main() async {
     }
   } else {}
 
+  Hive.registerAdapter(ProductAdapter());
+  Hive.registerAdapter(StoreAdapter());
+
+  await Hive.initFlutter();
   await di.setupLocator();
 
   SystemChrome.setPreferredOrientations(
