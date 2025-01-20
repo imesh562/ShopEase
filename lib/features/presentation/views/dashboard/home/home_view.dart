@@ -66,51 +66,55 @@ class _HomeViewState extends BaseViewState<HomeView> {
               listener: (_, state) async {},
               child: _hasLoaded
                   ? products.isNotEmpty
-                      ? SmartRefresher(
-                          controller: _refreshController,
-                          physics: const BouncingScrollPhysics(),
-                          onLoading: () {
-                            setState(() {
-                              pageCount++;
-                            });
-                            _loadData(shouldRefresh: false);
-                          },
-                          enablePullUp: true,
-                          onRefresh: () {
-                            setState(() {
-                              pageCount = 1;
-                              _hasLoaded = false;
-                            });
-                            _loadData(shouldRefresh: true);
-                          },
-                          child: SingleChildScrollView(
-                            controller: _scrollController,
-                            physics: const NeverScrollableScrollPhysics(),
-                            child: GridView.builder(
-                              padding: EdgeInsets.symmetric(horizontal: 20.w),
+                      ? RawScrollbar(
+                          thumbVisibility: true,
+                          thumbColor: AppColors.initColors().primaryBlue,
+                          child: SmartRefresher(
+                            controller: _refreshController,
+                            physics: const BouncingScrollPhysics(),
+                            onLoading: () {
+                              setState(() {
+                                pageCount++;
+                              });
+                              _loadData(shouldRefresh: false);
+                            },
+                            enablePullUp: true,
+                            onRefresh: () {
+                              setState(() {
+                                pageCount = 1;
+                                _hasLoaded = false;
+                              });
+                              _loadData(shouldRefresh: true);
+                            },
+                            child: SingleChildScrollView(
+                              controller: _scrollController,
                               physics: const NeverScrollableScrollPhysics(),
-                              shrinkWrap: true,
-                              itemCount: products.length,
-                              gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                childAspectRatio: 160.w / 240.h,
-                                crossAxisSpacing: 10.w,
-                                mainAxisSpacing: 10.h,
+                              child: GridView.builder(
+                                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                physics: const NeverScrollableScrollPhysics(),
+                                shrinkWrap: true,
+                                itemCount: products.length,
+                                gridDelegate:
+                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  childAspectRatio: 160.w / 240.h,
+                                  crossAxisSpacing: 10.w,
+                                  mainAxisSpacing: 10.h,
+                                ),
+                                itemBuilder: (context, index) {
+                                  return ProductItemComponent(
+                                    item: products[index],
+                                    onTapView: () {
+                                      Navigator.pushNamed(
+                                        context,
+                                        Routes.kProductDetailsView,
+                                        arguments: products[index],
+                                      );
+                                    },
+                                    onTapAdd: () {},
+                                  );
+                                },
                               ),
-                              itemBuilder: (context, index) {
-                                return ProductItemComponent(
-                                  item: products[index],
-                                  onTapView: () {
-                                    Navigator.pushNamed(
-                                      context,
-                                      Routes.kProductDetailsView,
-                                      arguments: products[index],
-                                    );
-                                  },
-                                  onTapAdd: () {},
-                                );
-                              },
                             ),
                           ),
                         )
