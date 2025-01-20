@@ -14,3 +14,15 @@ class GetProductsDataSuccessState extends ProductState {
     required this.isRefresh,
   });
 }
+
+class AddToCartSuccessState extends ProductState {}
+
+class ClearCartSuccessState extends ProductState {}
+
+class RemoveProductFromCartSuccessState extends ProductState {}
+
+class GetCartItemsSuccessState extends ProductState {
+  final List<Product> cartItems;
+
+  GetCartItemsSuccessState({required this.cartItems});
+}

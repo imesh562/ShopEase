@@ -11,6 +11,7 @@ import 'package:shopease/features/data/models/responses/product_data_reponse.dar
 import '../../../../core/service/dependency_injection.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_dimensions.dart';
+import '../../../../utils/enums.dart';
 import '../../bloc/base_bloc.dart';
 import '../../bloc/base_event.dart';
 import '../../bloc/base_state.dart';
@@ -35,13 +36,21 @@ class _ProductDetailsViewState extends BaseViewState<ProductDetailsView> {
   Widget buildView(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.initColors().white,
-      appBar: CachAppBar(
+      appBar: ShopEaseAppBar(
         title: widget.product.productName ?? '',
       ),
       body: BlocProvider<ProductBloc>(
         create: (_) => bloc,
         child: BlocListener<ProductBloc, BaseState<ProductState>>(
-          listener: (_, state) async {},
+          listener: (_, state) async {
+            if (state is AddToCartSuccessState) {
+              setState(() {
+                cartCount = 1;
+              });
+              showSnackBar(
+                  'Item added to cart successfully', AlertType.SUCCESS);
+            }
+          },
           child: Column(
             children: [
               Expanded(
@@ -396,36 +405,45 @@ class _ProductDetailsViewState extends BaseViewState<ProductDetailsView> {
                             ],
                           ),
                           SizedBox(height: 2.5.h),
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                                vertical: 5.h, horizontal: 10.w),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(48.r),
-                              ),
-                              border: Border.all(
-                                color: AppColors.initColors().primaryBlue,
-                              ),
-                              color: AppColors.initColors().white,
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(
-                                  Icons.add_shopping_cart_outlined,
-                                  color: AppColors.initColors().primaryBlue,
-                                  size: 20.h,
+                          InkWell(
+                            onTap: () {
+                              bloc.add(
+                                AddToCartEvent(
+                                    product: widget.product,
+                                    cartCount: cartCount),
+                              );
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 5.h, horizontal: 10.w),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(48.r),
                                 ),
-                                SizedBox(width: 10.w),
-                                Text(
-                                  'Add To Cart',
-                                  style: TextStyle(
-                                    color: AppColors.initColors().buttonColor,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: AppDimensions.kFontSize16,
+                                border: Border.all(
+                                  color: AppColors.initColors().primaryBlue,
+                                ),
+                                color: AppColors.initColors().white,
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.add_shopping_cart_outlined,
+                                    color: AppColors.initColors().primaryBlue,
+                                    size: 20.h,
                                   ),
-                                )
-                              ],
+                                  SizedBox(width: 10.w),
+                                  Text(
+                                    'Add To Cart',
+                                    style: TextStyle(
+                                      color: AppColors.initColors().buttonColor,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: AppDimensions.kFontSize16,
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ],

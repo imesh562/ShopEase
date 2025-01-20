@@ -4,10 +4,12 @@ import 'package:get_it/get_it.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shopease/core/network/mock_api_helper.dart';
+import 'package:shopease/features/data/repositories/cart_repository_impl.dart';
 
 import '../../features/data/datasources/remote_data_source.dart';
 import '../../features/data/datasources/shared_preference.dart';
 import '../../features/data/repositories/repository_impl.dart';
+import '../../features/domain/repositories/cart_repository.dart';
 import '../../features/domain/repositories/repository.dart';
 import '../../features/presentation/bloc/product/product_bloc.dart';
 import '../../utils/device_info.dart';
@@ -50,6 +52,9 @@ Future<void> setupLocator() async {
     () =>
         RepositoryImpl(remoteDataSource: injection(), networkInfo: injection()),
   );
+  injection.registerLazySingleton<CartRepository>(
+    () => CartRepositoryImpl(),
+  );
 
   ///Blocs
   injection.registerFactory(
@@ -57,6 +62,7 @@ Future<void> setupLocator() async {
       appSharedData: injection(),
       repository: injection(),
       deviceInfo: injection(),
+      cartRepo: injection(),
     ),
   );
 }
