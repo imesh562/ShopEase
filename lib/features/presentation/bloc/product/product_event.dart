@@ -12,3 +12,23 @@ class GetProductsDataEvent extends ProductEvent {
     this.isRefresh = true,
   });
 }
+
+class AddToCartEvent extends ProductEvent {
+  final Product product;
+  final int cartCount;
+
+  AddToCartEvent({
+    required this.product,
+    required this.cartCount,
+  });
+}
+
+class ClearCartEvent extends ProductEvent {}
+
+class RemoveProductFromCartEvent extends ProductEvent {
+  final int productId;
+
+  RemoveProductFromCartEvent({required this.productId});
+}
+
+class GetCartProductsEvent extends ProductEvent {}

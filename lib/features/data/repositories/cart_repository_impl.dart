@@ -4,18 +4,8 @@ import 'package:hive/hive.dart';
 import 'package:shopease/features/data/models/responses/product_data_reponse.dart';
 
 import '../../domain/repositories/cart_repository.dart';
-import '../../domain/repositories/repository.dart';
-import '../datasources/shared_preference.dart';
 
 class CartRepositoryImpl implements CartRepository {
-  final AppSharedData appSharedData;
-  final Repository repository;
-
-  CartRepositoryImpl({
-    required this.appSharedData,
-    required this.repository,
-  });
-
   Future<Box<Product>> openPostBox() async {
     return await Hive.openBox<Product>('cart_items');
   }
@@ -43,7 +33,7 @@ class CartRepositoryImpl implements CartRepository {
   @override
   Future<void> clearCart() async {
     try {
-      if (Hive.isBoxOpen('posts')) {
+      if (Hive.isBoxOpen('cart_items')) {
         final box = await openPostBox();
         await box.clear();
         print("All cached Hive data cleared.");

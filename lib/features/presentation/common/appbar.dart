@@ -4,7 +4,7 @@ import 'package:shopease/utils/app_dimensions.dart';
 
 import '../../../utils/app_colors.dart';
 
-class CachAppBar extends StatelessWidget implements PreferredSizeWidget {
+class ShopEaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool isGoBackVisible;
   final bool isPreLogin;
@@ -15,7 +15,7 @@ class CachAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool? disableCreateButton;
   final VoidCallback? onCreatePressed;
 
-  CachAppBar({
+  ShopEaseAppBar({
     this.title = '',
     this.actions,
     this.isGoBackVisible = true,
@@ -117,9 +117,15 @@ class CachAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
             ),
+          if (actions != null)
+            Positioned(
+              right: 5.w,
+              child: Row(
+                children: actions!,
+              ),
+            )
         ],
       ),
-      actions: actions,
     );
   }
 

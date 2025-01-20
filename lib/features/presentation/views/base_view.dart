@@ -421,6 +421,7 @@ abstract class BaseViewState<Page extends BaseView> extends State<Page> {
   showSnackBar(String message, AlertType alertType) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
+        duration: Duration(seconds: 1, milliseconds: 500),
         content: Text(
           message,
           style: TextStyle(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
+import 'package:shopease/utils/enums.dart';
 
 import '../../../../../core/service/dependency_injection.dart';
 import '../../../../../utils/app_colors.dart';
@@ -55,6 +56,8 @@ class _HomeViewState extends BaseViewState<HomeView> {
               _refreshController.refreshCompleted();
               _refreshController.loadComplete();
             });
+          } else if (state is AddToCartSuccessState) {
+            showSnackBar('Item added to cart successfully', AlertType.SUCCESS);
           }
         },
         child: Scaffold(
@@ -111,7 +114,14 @@ class _HomeViewState extends BaseViewState<HomeView> {
                                         arguments: products[index],
                                       );
                                     },
-                                    onTapAdd: () {},
+                                    onTapAdd: () {
+                                      bloc.add(
+                                        AddToCartEvent(
+                                          product: products[index],
+                                          cartCount: 1,
+                                        ),
+                                      );
+                                    },
                                   );
                                 },
                               ),
