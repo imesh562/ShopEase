@@ -32,10 +32,7 @@ class Routes {
             type: PageTransitionType.fade);
       case Routes.kCheckOutView:
         return PageTransition(
-            child: CheckOutView(
-              checkOutViewArgs: settings.arguments as CheckOutViewArgs,
-            ),
-            type: PageTransitionType.fade);
+            child: CheckOutView(), type: PageTransitionType.fade);
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

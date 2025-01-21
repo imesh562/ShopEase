@@ -142,7 +142,7 @@ class _AppTextBoxState extends State<AppTextBox> {
                             TextStyle(
                               fontSize: AppDimensions.kFontSize12,
                               fontWeight: FontWeight.w500,
-                              color: AppColors.initColors().textColor6,
+                              color: AppColors.initColors().newBlack,
                             ),
                       ),
                     ),
@@ -152,7 +152,7 @@ class _AppTextBoxState extends State<AppTextBox> {
                           TextStyle(
                             fontSize: AppDimensions.kFontSize12,
                             fontWeight: FontWeight.w500,
-                            color: AppColors.initColors().textColor6,
+                            color: AppColors.initColors().newBlack,
                           ),
                     ),
                   ],
@@ -166,19 +166,19 @@ class _AppTextBoxState extends State<AppTextBox> {
                   arrowTipDistance: 5,
                   hasShadow: false,
                   barrierColor: AppColors.initColors().colorTransparent,
-                  backgroundColor: AppColors.initColors().matteBlack,
+                  backgroundColor: AppColors.initColors().newBlack2,
                   content: Text(
                     widget.helpText!,
                     softWrap: true,
                     style: TextStyle(
-                      color: AppColors.initColors().white,
+                      color: AppColors.initColors().newWhite,
                       fontSize: AppDimensions.kFontSize12,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
                   child: Icon(
                     Icons.info,
-                    color: AppColors.initColors().matteBlack,
+                    color: AppColors.initColors().newBlack2,
                     size: 14.w,
                   ),
                 )
@@ -205,9 +205,6 @@ class _AppTextBoxState extends State<AppTextBox> {
               focusNode: _focusNode,
               controller: _controller,
               key: widget.fieldKey,
-              textInputAction: widget.shouldRedirectToNextField!
-                  ? TextInputAction.next
-                  : TextInputAction.done,
               enabled: widget.isEnable,
               textCapitalization: TextCapitalization.sentences,
               maxLength: widget.maxLength,
@@ -215,9 +212,9 @@ class _AppTextBoxState extends State<AppTextBox> {
               style: TextStyle(
                 fontSize: AppDimensions.kFontSize12,
                 fontWeight: FontWeight.w300,
-                color: AppColors.initColors().textColor,
+                color: AppColors.initColors().newBlack2,
               ),
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.multiline,
               inputFormatters: [
                 if (widget.textInputFormatter != null)
                   widget.textInputFormatter!
@@ -233,7 +230,7 @@ class _AppTextBoxState extends State<AppTextBox> {
                     Radius.circular(6.r),
                   ),
                   borderSide: BorderSide(
-                    color: AppColors.initColors().lightBlue,
+                    color: AppColors.initColors().lightGrey,
                     width: 1.0.w, // Adjust width as needed
                   ),
                 ),
@@ -242,7 +239,7 @@ class _AppTextBoxState extends State<AppTextBox> {
                     Radius.circular(6.r),
                   ),
                   borderSide: BorderSide(
-                    color: AppColors.initColors().lightBlue,
+                    color: AppColors.initColors().lightGrey,
                     width: 1.0.w, // Adjust width as needed
                   ),
                 ),
@@ -251,7 +248,7 @@ class _AppTextBoxState extends State<AppTextBox> {
                     Radius.circular(6.r),
                   ),
                   borderSide: BorderSide(
-                    color: AppColors.initColors().lightBlue,
+                    color: AppColors.initColors().lightGrey,
                     width: 1.0.w, // Adjust width as needed
                   ),
                 ),
@@ -275,12 +272,12 @@ class _AppTextBoxState extends State<AppTextBox> {
                 hintText: widget.hint,
                 hintStyle: TextStyle(
                     color: widget.hintColor ??
-                        AppColors.initColors().darkStrokeGrey,
+                        AppColors.initColors().newBlack2.withOpacity(0.5),
                     fontSize: AppDimensions.kFontSize12,
                     fontWeight: FontWeight.w400),
                 fillColor: widget.bgColor != null
                     ? widget.bgColor!.withOpacity(0.15)
-                    : AppColors.initColors().textFieldFill,
+                    : AppColors.initColors().newWhite,
               ),
             ),
           )
@@ -294,12 +291,12 @@ class _AppTextBoxState extends State<AppTextBox> {
             decoration: BoxDecoration(
               color: widget.bgColor != null
                   ? widget.bgColor!.withOpacity(0.15)
-                  : AppColors.initColors().textFieldFill,
+                  : AppColors.initColors().newWhite,
               borderRadius: BorderRadius.all(
                 Radius.circular(6.r),
               ),
               border: Border.all(
-                color: AppColors.initColors().lightBlue,
+                color: AppColors.initColors().lightGrey,
                 width: 1.0.w,
               ),
             ),

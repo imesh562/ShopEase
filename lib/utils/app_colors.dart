@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'app_constants.dart';
+import '../core/service/dependency_injection.dart';
+import '../features/data/datasources/shared_preference.dart';
 import 'enums.dart';
 
 class AppColors {
@@ -83,7 +84,8 @@ class AppColors {
   Color suggestionTextColor;
 
   static AppColors initColors() {
-    if (AppConstants.selectedTheme == ThemeType.LIGHT) {
+    final appSharedData = injection<AppSharedData>();
+    if (appSharedData.getThemeType() == ThemeType.LIGHT) {
       return initializeLightColors();
     } else {
       return initializeDarkColors();

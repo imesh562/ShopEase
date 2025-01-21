@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopease/features/data/datasources/shared_preference.dart';
 
 import '../../../../../utils/app_colors.dart';
 import '../../../../../utils/app_dimensions.dart';
 
 class BottomNavBar extends StatefulWidget {
   int selectedTab;
-  final AppSharedData appSharedData;
   final Function(int) callback;
   BottomNavBar({
     required this.callback,
     required this.selectedTab,
-    required this.appSharedData,
   });
 
   @override

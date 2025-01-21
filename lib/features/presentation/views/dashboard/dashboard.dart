@@ -46,14 +46,8 @@ class _DashboardViewState extends BaseViewState<DashboardView> {
       bottomNavigationBar: BottomNavBar(
         selectedTab: selectedTab,
         callback: (value) {
-          if (value == 4) {
-            setState(() {
-              actionTab = 1;
-            });
-          }
           changeTab(value);
         },
-        appSharedData: appSharedData,
       ),
       body: _getBody(),
     );
@@ -76,7 +70,11 @@ class _DashboardViewState extends BaseViewState<DashboardView> {
       case 2:
         return CartView();
       case 3:
-        return SettingsView();
+        return SettingsView(
+          onChangeTheme: () {
+            setState(() {});
+          },
+        );
       default:
         return HomeView();
     }

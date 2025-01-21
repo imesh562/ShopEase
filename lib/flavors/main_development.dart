@@ -7,7 +7,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:provider/provider.dart';
 import 'package:shopease/app/shopease_app.dart';
+import 'package:shopease/core/service/Theme_provider.dart';
 import 'package:shopease/features/data/models/responses/product_data_reponse.dart';
 import 'package:shopease/utils/app_colors.dart';
 import 'package:shopease/utils/enums.dart';
@@ -53,7 +55,10 @@ Future<void> main() async {
     DevicePreview(
       enabled: kIsWeb,
       builder: (context) {
-        return ShopEase();
+        return ChangeNotifierProvider(
+          create: (context) => ThemeProvider(),
+          child: ShopEase(),
+        );
       },
     ),
   );

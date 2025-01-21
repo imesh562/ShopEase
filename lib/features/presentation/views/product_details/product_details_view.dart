@@ -35,7 +35,7 @@ class _ProductDetailsViewState extends BaseViewState<ProductDetailsView> {
   @override
   Widget buildView(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.initColors().white,
+      backgroundColor: AppColors.initColors().newWhite,
       appBar: ShopEaseAppBar(
         title: widget.product.productName ?? '',
       ),
@@ -121,7 +121,7 @@ class _ProductDetailsViewState extends BaseViewState<ProductDetailsView> {
                                             Icon(
                                               Icons.error,
                                               color: AppColors.initColors()
-                                                  .matteBlack,
+                                                  .newBlack,
                                               size: 40.h,
                                             ),
                                             SizedBox(height: 5.h),
@@ -130,7 +130,7 @@ class _ProductDetailsViewState extends BaseViewState<ProductDetailsView> {
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                 color: AppColors.initColors()
-                                                    .matteBlack,
+                                                    .newBlack,
                                                 fontSize:
                                                     AppDimensions.kFontSize14,
                                                 fontWeight: FontWeight.w400,
@@ -248,12 +248,12 @@ class _ProductDetailsViewState extends BaseViewState<ProductDetailsView> {
                                       overflow: TextOverflow.ellipsis,
                                       fontSize: AppDimensions.kFontSize16,
                                       fontWeight: FontWeight.w600,
-                                      color: AppColors.initColors().matteBlack,
+                                      color: AppColors.initColors().newBlack2,
                                     ),
                                   ),
                                   Container(
                                     decoration: BoxDecoration(
-                                      color: AppColors.initColors().matteBlack,
+                                      color: AppColors.initColors().newBlack2,
                                       borderRadius: BorderRadius.circular(12.r),
                                     ),
                                     padding: EdgeInsets.symmetric(
@@ -265,7 +265,7 @@ class _ProductDetailsViewState extends BaseViewState<ProductDetailsView> {
                                       style: TextStyle(
                                         fontSize: AppDimensions.kFontSize16,
                                         fontWeight: FontWeight.w600,
-                                        color: AppColors.initColors().white,
+                                        color: AppColors.initColors().newWhite,
                                       ),
                                     ),
                                   ),
@@ -278,7 +278,7 @@ class _ProductDetailsViewState extends BaseViewState<ProductDetailsView> {
                                 style: TextStyle(
                                   fontSize: AppDimensions.kFontSize12,
                                   fontWeight: FontWeight.w500,
-                                  color: AppColors.initColors().matteBlack,
+                                  color: AppColors.initColors().newBlack2,
                                 ),
                               ),
                             ],
@@ -341,7 +341,7 @@ class _ProductDetailsViewState extends BaseViewState<ProductDetailsView> {
                               style: TextStyle(
                                 fontSize: AppDimensions.kFontSize22,
                                 fontWeight: FontWeight.w600,
-                                color: AppColors.initColors().matteBlack,
+                                color: AppColors.initColors().newBlack,
                               ),
                             ),
                           ),
@@ -389,7 +389,7 @@ class _ProductDetailsViewState extends BaseViewState<ProductDetailsView> {
                                 style: TextStyle(
                                   fontSize: AppDimensions.kFontSize16,
                                   fontWeight: FontWeight.w400,
-                                  color: AppColors.initColors().matteBlack,
+                                  color: AppColors.initColors().newBlack,
                                 ),
                               ),
                               Flexible(
@@ -398,7 +398,7 @@ class _ProductDetailsViewState extends BaseViewState<ProductDetailsView> {
                                   style: TextStyle(
                                     fontSize: AppDimensions.kFontSize18,
                                     fontWeight: FontWeight.w600,
-                                    color: AppColors.initColors().matteBlack,
+                                    color: AppColors.initColors().newBlack,
                                   ),
                                 ),
                               ),

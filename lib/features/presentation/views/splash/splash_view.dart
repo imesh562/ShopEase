@@ -56,7 +56,7 @@ class _SplashViewState extends BaseViewState<SplashView>
   @override
   Widget buildView(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.initColors().nonChangeWhite,
+        backgroundColor: AppColors.initColors().newWhite,
         body: BlocProvider<ProductBloc>(
           create: (_) => bloc,
           child: BlocListener<ProductBloc, BaseState<ProductState>>(
@@ -90,7 +90,7 @@ class _SplashViewState extends BaseViewState<SplashView>
                                 style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   fontSize: AppDimensions.kFontSize12,
-                                  color: AppColors.initColors().dark,
+                                  color: AppColors.initColors().newBlack2,
                                 ),
                               ),
                             ),
