@@ -207,6 +207,7 @@ class _CheckOutViewState extends BaseViewState<CheckOutView> {
                         }
                       },
                     ),
+                    SizedBox(height: 10.h),
                   ],
                 ),
               ),

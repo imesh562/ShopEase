@@ -446,6 +446,7 @@ class _ProductDetailsViewState extends BaseViewState<ProductDetailsView> {
                               ),
                             ),
                           ),
+                          SizedBox(height: 10.h),
                         ],
                       ),
                     ),
