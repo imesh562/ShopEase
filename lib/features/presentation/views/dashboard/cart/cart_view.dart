@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:shopease/features/presentation/common/appbar.dart';
-import 'package:shopease/features/presentation/views/checkout/checkout_view.dart';
 
 import '../../../../../core/service/dependency_injection.dart';
 import '../../../../../utils/app_colors.dart';
 import '../../../../../utils/app_dimensions.dart';
+import '../../../../../utils/app_images.dart';
 import '../../../../../utils/enums.dart';
 import '../../../../../utils/navigation_routes.dart';
 import '../../../../data/models/responses/product_data_reponse.dart';
@@ -37,7 +37,7 @@ class _CartViewState extends BaseViewState<CartView> {
   @override
   Widget buildView(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.initColors().white,
+      backgroundColor: AppColors.initColors().newWhite,
       appBar: ShopEaseAppBar(
         title: 'Cart',
         isGoBackVisible: false,
@@ -61,7 +61,7 @@ class _CartViewState extends BaseViewState<CartView> {
                 style: TextStyle(
                   fontSize: AppDimensions.kFontSize12,
                   fontWeight: FontWeight.w600,
-                  color: AppColors.initColors().textColor,
+                  color: AppColors.initColors().newBlack2,
                 ),
               ),
             ),
@@ -93,32 +93,90 @@ class _CartViewState extends BaseViewState<CartView> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                child: ListView.separated(
-                  physics: const BouncingScrollPhysics(),
-                  shrinkWrap: true,
-                  padding: EdgeInsets.only(
-                    left: 20.w,
-                    right: 20.w,
-                    bottom: 20.w,
+              if (products.isNotEmpty)
+                Expanded(
+                  child: ListView.separated(
+                    physics: const BouncingScrollPhysics(),
+                    shrinkWrap: true,
+                    padding: EdgeInsets.only(
+                      left: 20.w,
+                      right: 20.w,
+                      bottom: 20.w,
+                    ),
+                    itemCount: products.length,
+                    itemBuilder: (context, index) {
+                      Product product = products[index];
+                      return CartWidget(
+                        product: product,
+                        onTapCard: () {
+                          Navigator.pushNamed(
+                            context,
+                            Routes.kProductDetailsView,
+                            arguments: product,
+                          ).then((value) {
+                            bloc.add(GetCartProductsEvent());
+                          });
+                        },
+                        onTapDelete: () {
+                          bloc.add(
+                            RemoveProductFromCartEvent(productId: product.id!),
+                          );
+                        },
+                      );
+                    },
+                    separatorBuilder: (BuildContext context, int index) {
+                      return SizedBox(height: 10.h);
+                    },
                   ),
-                  itemCount: products.length,
-                  itemBuilder: (context, index) {
-                    Product product = products[index];
-                    return CartWidget(
-                      product: product,
-                      onTapDelete: () {
-                        bloc.add(
-                          RemoveProductFromCartEvent(productId: product.id!),
-                        );
-                      },
-                    );
-                  },
-                  separatorBuilder: (BuildContext context, int index) {
-                    return SizedBox(height: 10.h);
-                  },
+                )
+              else
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 40),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Center(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                  height: 25,
+                                  width: 25,
+                                  child: Image.asset(
+                                    AppImages.imgSearch,
+                                    color: AppColors.initColors().newBlack2,
+                                  )),
+                              SizedBox(
+                                height: 10.h,
+                              ),
+                              Text(
+                                'No items in the cart',
+                                style: TextStyle(
+                                  fontSize: AppDimensions.kFontSize10,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.initColors().newBlack2,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10.h,
+                              ),
+                              Text(
+                                'Please add items to your cart first.',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: AppDimensions.kFontSize10,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.initColors().newBlack2,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
               if (products.isNotEmpty)
                 Container(
                   decoration: BoxDecoration(
@@ -148,19 +206,14 @@ class _CartViewState extends BaseViewState<CartView> {
                           Navigator.pushNamed(
                             context,
                             Routes.kCheckOutView,
-                            arguments: CheckOutViewArgs(
-                              products: products,
-                              total: total,
-                            ),
                           ).then((value) {
                             if (value is bool && value) {
                               setState(() {
                                 products.clear();
                                 total = 0;
                               });
-                              showSnackBar('Checkout completed successfully',
+                              showSnackBar('Order placed successfully',
                                   AlertType.SUCCESS);
-                              bloc.add(GetCartProductsEvent());
                             }
                           });
                         },

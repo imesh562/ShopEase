@@ -171,7 +171,7 @@ abstract class BaseViewState<Page extends BaseView> extends State<Page> {
       if (appSharedData.hasPushToken()) {
         appSharedData.clearPushToken();
       }
-      AppConstants.selectedTheme = ThemeType.LIGHT;
+      appSharedData.setTheme(ThemeType.LIGHT);
     });
   }
 
@@ -195,15 +195,14 @@ abstract class BaseViewState<Page extends BaseView> extends State<Page> {
             borderRadius: BorderRadius.circular(8.0),
           ),
           contentPadding: EdgeInsets.all(14.0),
-          backgroundColor: AppColors.initColors().white,
+          backgroundColor: AppColors.initColors().newWhite,
           title: Text(
             title ?? '',
             textAlign: TextAlign.start,
             style: TextStyle(
               fontWeight: FontWeight.w500,
               fontSize: AppDimensions.kFontSize14,
-              color:
-                  AppColors.initColors().textFieldTitleColor, // Customize color
+              color: AppColors.initColors().newBlack2, // Customize color
             ),
           ),
           content: Column(
@@ -217,8 +216,7 @@ abstract class BaseViewState<Page extends BaseView> extends State<Page> {
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: AppDimensions.kFontSize10,
-                    color:
-                        AppColors.initColors().textFieldTitleColor, // Customize
+                    color: AppColors.initColors().newBlack2, // Customize
                   ),
                 ),
               ),

@@ -166,7 +166,7 @@ class _AppTextField2State extends State<AppTextField2> {
                         TextStyle(
                           fontSize: AppDimensions.kFontSize12,
                           fontWeight: FontWeight.w500,
-                          color: AppColors.initColors().textColor6,
+                          color: AppColors.initColors().newBlack,
                         ),
                     children: [
                       TextSpan(
@@ -175,7 +175,7 @@ class _AppTextField2State extends State<AppTextField2> {
                             TextStyle(
                               fontSize: AppDimensions.kFontSize12,
                               fontWeight: FontWeight.w500,
-                              color: AppColors.initColors().textColor6,
+                              color: AppColors.initColors().newBlack,
                             ),
                       )
                     ],
@@ -191,7 +191,7 @@ class _AppTextField2State extends State<AppTextField2> {
                   arrowTipDistance: 5,
                   hasShadow: false,
                   barrierColor: AppColors.initColors().colorTransparent,
-                  backgroundColor: AppColors.initColors().matteBlack,
+                  backgroundColor: AppColors.initColors().newBlack,
                   content: Text(
                     widget.helpText!,
                     softWrap: true,
@@ -199,12 +199,12 @@ class _AppTextField2State extends State<AppTextField2> {
                       color: widget.isPreLogin
                           ? widget.changeColorOnDisable!
                               ? AppColors.initColors()
-                                  .textFieldTitleColor
+                                  .newBlack2
                                   .withOpacity(0.4)
-                              : AppColors.initColors().textFieldTitleColor
+                              : AppColors.initColors().newBlack2
                           : widget.changeColorOnDisable!
-                              ? AppColors.initColors().white.withOpacity(0.4)
-                              : AppColors.initColors().white,
+                              ? AppColors.initColors().newWhite.withOpacity(0.4)
+                              : AppColors.initColors().newWhite,
                       fontSize: AppDimensions.kFontSize12,
                       fontWeight: FontWeight.w400,
                     ),
@@ -213,13 +213,11 @@ class _AppTextField2State extends State<AppTextField2> {
                     Icons.info,
                     color: widget.isPreLogin
                         ? widget.changeColorOnDisable!
-                            ? AppColors.initColors()
-                                .textFieldTitleColor
-                                .withOpacity(0.4)
-                            : AppColors.initColors().textFieldTitleColor
+                            ? AppColors.initColors().newBlack2.withOpacity(0.4)
+                            : AppColors.initColors().newBlack2
                         : widget.changeColorOnDisable!
-                            ? AppColors.initColors().matteBlack.withOpacity(0.4)
-                            : AppColors.initColors().matteBlack,
+                            ? AppColors.initColors().newBlack.withOpacity(0.4)
+                            : AppColors.initColors().newBlack,
                     size: 14.w,
                   ),
                 )
@@ -294,7 +292,7 @@ class _AppTextField2State extends State<AppTextField2> {
           style: TextStyle(
             fontSize: AppDimensions.kFontSize12,
             fontWeight: FontWeight.w300,
-            color: AppColors.initColors().textColor,
+            color: AppColors.initColors().newBlack,
           ),
           keyboardType: widget.inputType ?? TextInputType.text,
           decoration: InputDecoration(
@@ -320,7 +318,7 @@ class _AppTextField2State extends State<AppTextField2> {
             hintStyle: TextStyle(
               color: widget.isPreLogin
                   ? AppColors.initColors().hintColor
-                  : AppColors.initColors().hintColor,
+                  : AppColors.initColors().newBlack2.withOpacity(0.5),
               fontSize: AppDimensions.kFontSize12,
               fontWeight: FontWeight.w300,
             ),
@@ -334,7 +332,7 @@ class _AppTextField2State extends State<AppTextField2> {
                 Radius.circular(6.r),
               ),
               borderSide: BorderSide(
-                color: AppColors.initColors().lightBlue,
+                color: AppColors.initColors().lightGrey,
                 width: 1.0.w, // Adjust width as needed
               ),
             ),
@@ -343,7 +341,7 @@ class _AppTextField2State extends State<AppTextField2> {
                 Radius.circular(6.r),
               ),
               borderSide: BorderSide(
-                color: AppColors.initColors().lightBlue,
+                color: AppColors.initColors().lightGrey,
                 width: 1.0.w, // Adjust width as needed
               ),
             ),
@@ -352,7 +350,7 @@ class _AppTextField2State extends State<AppTextField2> {
                 Radius.circular(6.r),
               ),
               borderSide: BorderSide(
-                color: AppColors.initColors().lightBlue,
+                color: AppColors.initColors().lightGrey,
                 width: 1.0.w, // Adjust width as needed
               ),
             ),
@@ -361,7 +359,7 @@ class _AppTextField2State extends State<AppTextField2> {
                 Radius.circular(6.r),
               ),
               borderSide: BorderSide(
-                color: AppColors.initColors().lightBlue,
+                color: AppColors.initColors().lightGrey,
                 width: 1.0.w, // Adjust width as needed
               ),
             ),

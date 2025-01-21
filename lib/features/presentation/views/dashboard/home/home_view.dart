@@ -61,7 +61,7 @@ class _HomeViewState extends BaseViewState<HomeView> {
           }
         },
         child: Scaffold(
-          backgroundColor: AppColors.initColors().white,
+          backgroundColor: AppColors.initColors().newWhite,
           appBar: HomeAppBar(),
           body: BlocProvider<ProductBloc>(
             create: (_) => bloc,
@@ -140,8 +140,11 @@ class _HomeViewState extends BaseViewState<HomeView> {
                                     SizedBox(
                                         height: 25,
                                         width: 25,
-                                        child:
-                                            Image.asset(AppImages.imgSearch)),
+                                        child: Image.asset(
+                                          AppImages.imgSearch,
+                                          color:
+                                              AppColors.initColors().newBlack2,
+                                        )),
                                     SizedBox(
                                       height: 10.h,
                                     ),
@@ -150,8 +153,7 @@ class _HomeViewState extends BaseViewState<HomeView> {
                                       style: TextStyle(
                                         fontSize: AppDimensions.kFontSize10,
                                         fontWeight: FontWeight.w600,
-                                        color: AppColors.initColors()
-                                            .suggestionTextColor,
+                                        color: AppColors.initColors().newBlack2,
                                       ),
                                     ),
                                     SizedBox(
@@ -163,8 +165,7 @@ class _HomeViewState extends BaseViewState<HomeView> {
                                       style: TextStyle(
                                         fontSize: AppDimensions.kFontSize10,
                                         fontWeight: FontWeight.w400,
-                                        color: AppColors.initColors()
-                                            .suggestionTextColor,
+                                        color: AppColors.initColors().newBlack2,
                                       ),
                                     ),
                                   ],

@@ -83,7 +83,7 @@ class _ProductItemComponentState extends State<ProductItemComponent> {
                     style: TextStyle(
                       fontSize: AppDimensions.kFontSize14,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.initColors().textColor,
+                      color: AppColors.initColors().newBlack2,
                       height: 23.h / AppDimensions.kFontSize14,
                     ),
                   ),
@@ -94,7 +94,7 @@ class _ProductItemComponentState extends State<ProductItemComponent> {
                     style: TextStyle(
                       fontSize: AppDimensions.kFontSize12,
                       fontWeight: FontWeight.w400,
-                      color: AppColors.initColors().textColor,
+                      color: AppColors.initColors().newBlack2,
                     ),
                   ),
                   SizedBox(height: 5.h),
@@ -134,13 +134,13 @@ class _ProductItemComponentState extends State<ProductItemComponent> {
                           decoration: BoxDecoration(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(48.r)),
-                            color: AppColors.initColors().matteBlack,
+                            color: AppColors.initColors().newBlack,
                           ),
                           child: Center(
                               child: Icon(
                             Icons.add_shopping_cart,
                             size: 17.5.h,
-                            color: AppColors.initColors().white,
+                            color: AppColors.initColors().newWhite,
                           )),
                         ),
                       ),

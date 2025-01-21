@@ -1,11 +1,13 @@
 import 'dart:convert';
 
-import 'package:shopease/features/data/models/responses/user_data_response.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shopease/features/data/models/responses/user_data_response.dart';
+import 'package:shopease/utils/enums.dart';
 
 const String _APP_TOKEN = 'app_token';
 const String _PUSH_TOKEN = 'push_token';
 const String _AUTH_USER = 'auth_user';
+const String _THEME_TYPE = 'theme_type';
 
 class AppSharedData {
   late SharedPreferences secureStorage;
@@ -71,5 +73,16 @@ class AppSharedData {
 
   removeAuthUser() {
     secureStorage.remove(_AUTH_USER);
+  }
+
+  ///Theme Data
+  ThemeType getThemeType() {
+    return secureStorage.getBool(_THEME_TYPE) == true
+        ? ThemeType.DARK
+        : ThemeType.LIGHT;
+  }
+
+  setTheme(ThemeType themeType) {
+    secureStorage.setBool(_THEME_TYPE, themeType == ThemeType.DARK);
   }
 }
