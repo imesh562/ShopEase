@@ -239,16 +239,16 @@ class _ProductDetailsViewState extends BaseViewState<ProductDetailsView> {
                             children: [
                               SizedBox(height: 20.h),
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text(
-                                    widget.product.productName ?? '',
-                                    style: TextStyle(
-                                      overflow: TextOverflow.ellipsis,
-                                      fontSize: AppDimensions.kFontSize16,
-                                      fontWeight: FontWeight.w600,
-                                      color: AppColors.initColors().newBlack2,
+                                  Expanded(
+                                    child: Text(
+                                      widget.product.productName ?? '',
+                                      style: TextStyle(
+                                        overflow: TextOverflow.ellipsis,
+                                        fontSize: AppDimensions.kFontSize16,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.initColors().newBlack2,
+                                      ),
                                     ),
                                   ),
                                   Container(
